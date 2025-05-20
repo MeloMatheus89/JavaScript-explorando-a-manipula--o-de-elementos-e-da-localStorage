@@ -8,7 +8,7 @@ Ele tem uma capacidade generosa de armazenamento (cerca de 5-10MB, dependendo do
 
 ## O que é seguro guardar?
 
-Informações não sensíveis, como preferências de usuário ou um carrinho de compras. Jamais armazene informações pessoais ou chaves de autenticação.
+Informações não sensíveis, como preferências de usuário ou um carrinho de compras. Jamais armazene <strong>informações pessoais ou chaves de autenticação</strong>.
 
 ## sessionStorage:
 
@@ -38,3 +38,9 @@ São limitados em tamanho (perto de 4kb cada). E <strong>atenção!</strong> Ele
 Identificadores de sessão, preferências de usuário ou tokens de CSRF\*. Mas cuidado com os regulamentos de privacidade, como o GDPR\*\*, quando estiver trabalhando com cookies!
 
 `CSRF, ou Cross-Site Request Forgery, é um ataque contra aplicações web em que um invasor engana o navegador do usuário para realizar ações indesejadas em um site no qual o usuário está autenticado, sem o conhecimento ou consentimento do usuário. Isso pode incluir ações como fazer uma compra, alterar um endereço de e-mail ou uma senha em um site. O site vulnerável não consegue distinguir se a solicitação foi feita voluntariamente pelo usuário ou se foi uma ação maliciosa induzida por um terceiro.`
+
+`GDPR, ou General Data Protection Regulation (Regulamento Geral de Proteção de Dados), é uma legislação da União Europeia que entrou em vigor em maio de 2018. O GDPR visa proteger a privacidade e os dados pessoais dos cidadãos da UE e do Espaço Econômico Europeu (EEE).`
+
+## Resumo:
+
+De um modo geral existem formatos diferentes de armazenamento de informações para as aplicações, cada uma para sua finalidade. É interessante estudar e aprofundar mais nesse aspecto para garantir que os dados do usuário estarão seguros e todo o domínio também esteja resguardado pela lei.
