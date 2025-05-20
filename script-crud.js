@@ -46,9 +46,14 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
     descricao: textArea.value,
   };
   listaTarefas.push(tarefa);
+  const elementoTarefa = criarElementoTarefa(tarefa);
+  ulTarefas.append(elementoTarefa);
+
   // Usando o localStorage
   //localStorage.setItem("tarefas", listaTarefas); <--> Neste momento o objeto estaria do tipo: [{descricao: 'texto digitado'}].toString() e isso retorna um '[object Object]'. Que claramente foge do que queremos. Visto que o local Storage só armazena strings.
   localStorage.setItem("tarefas", JSON.stringify(listaTarefas));
+  textArea.value = "";
+  formAdicionarTarefa.classList.add("hidden");
 });
 
 listaTarefas.forEach((tarefa) => {
