@@ -27,6 +27,11 @@ function criarElementoTarefa(tarefa) {
   const imagemDoBotao = document.createElement("img");
   imagemDoBotao.setAttribute("src", "/imagens/edit.png");
   botao.classList.add("app_button-edit");
+  botao.onclick = () => {
+    const novaDescricao = prompt("Qual o novo nome da tarefa?");
+    paragrafo.textContent = novaDescricao;
+    // Até esse ponto a gente atualiza no DOM mas não atualiza no localStorage. Precisamos corrigir isso.
+  };
 
   botao.append(imagemDoBotao);
   li.append(svg);
