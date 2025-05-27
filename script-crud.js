@@ -7,6 +7,10 @@ const textArea = document.querySelector(".app__form-textarea");
 const listaTarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 const ulTarefas = document.querySelector(".app__section-task-list");
 
+function atualizarTarefas() {
+  localStorage.setItem("tarefas", JSON.stringify(listaTarefas));
+}
+
 function criarElementoTarefa(tarefa) {
   //devolver um html que represente essa tarefa;
   const li = document.createElement("li");
@@ -30,7 +34,9 @@ function criarElementoTarefa(tarefa) {
   botao.onclick = () => {
     const novaDescricao = prompt("Qual o novo nome da tarefa?");
     paragrafo.textContent = novaDescricao;
-    // Até esse ponto a gente atualiza no DOM mas não atualiza no localStorage. Precisamos corrigir isso.
+    // Atualiza o valor dentro da localStorage
+    tarefa.descricao = novaDescricao;
+    atualizarTarefas();
   };
 
   botao.append(imagemDoBotao);
@@ -56,7 +62,7 @@ formAdicionarTarefa.addEventListener("submit", (evento) => {
 
   // Usando o localStorage
   //localStorage.setItem("tarefas", listaTarefas); <--> Neste momento o objeto estaria do tipo: [{descricao: 'texto digitado'}].toString() e isso retorna um '[object Object]'. Que claramente foge do que queremos. Visto que o local Storage só armazena strings.
-  localStorage.setItem("tarefas", JSON.stringify(listaTarefas));
+  atualizarTarefas();
   textArea.value = "";
   formAdicionarTarefa.classList.add("hidden");
 });
