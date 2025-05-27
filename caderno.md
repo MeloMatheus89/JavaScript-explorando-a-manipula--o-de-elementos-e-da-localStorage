@@ -44,3 +44,15 @@ Identificadores de sessão, preferências de usuário ou tokens de CSRF\*. Mas c
 ## Resumo:
 
 De um modo geral existem formatos diferentes de armazenamento de informações para as aplicações, cada uma para sua finalidade. É interessante estudar e aprofundar mais nesse aspecto para garantir que os dados do usuário estarão seguros e todo o domínio também esteja resguardado pela lei.
+
+## Debugger:
+
+`debugger`
+
+Ao inserir essa função no código do navegador ele começa a fazer "step-by-step" a depuração (debugação?! Debugagem?! ) do código de acordo com a vontade do usuário. Ideal para entender qual etapa do código "quebra" ou se comporta de modo inesperado quando estamos falando de javaScript.
+
+Absurdamente interessante quando estamos precisando de validar alguma função. Definitivamente merece seu lugar na caixa de ferramentas do desenvolvedor.
+
+## Organização em funções específicas:
+
+Sempre que uma linha de código for chamada diversas vezes para fazer algo, como no nosso caso foi a de atualizar o localStorage, é bom colocar essa linha (mesmo que seja apenas uma linha) em uma função e chamar essa função. Qual o motivo de fazer isso? Você ganhará tempo de manutenção no código e o código ficará mais limpo. Só tome o cuidado que as funções declaradas devem estar no topo do arquivo (quando não estiver modularizadas) e importadas (quando estiver modularizadas).

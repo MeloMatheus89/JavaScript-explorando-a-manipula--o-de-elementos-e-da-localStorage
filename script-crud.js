@@ -31,12 +31,16 @@ function criarElementoTarefa(tarefa) {
   const imagemDoBotao = document.createElement("img");
   imagemDoBotao.setAttribute("src", "/imagens/edit.png");
   botao.classList.add("app_button-edit");
+
   botao.onclick = () => {
     const novaDescricao = prompt("Qual o novo nome da tarefa?");
-    paragrafo.textContent = novaDescricao;
-    // Atualiza o valor dentro da localStorage
-    tarefa.descricao = novaDescricao;
-    atualizarTarefas();
+    console.log("nova descrição da tarefa: ", novaDescricao);
+    if (novaDescricao) {
+      paragrafo.textContent = novaDescricao;
+      // Atualiza o valor dentro da localStorage
+      tarefa.descricao = novaDescricao;
+      atualizarTarefas();
+    }
   };
 
   botao.append(imagemDoBotao);
