@@ -24,7 +24,7 @@ const somPause = new Audio("sons/pause.mp3");
 const somInicio = new Audio("sons/play.wav");
 const somFinalizacao = new Audio("sons/beep.mp3");
 
-let temporizadorEmSegundos = 30;
+let temporizadorEmSegundos = 1500;
 let intervaloId = null;
 
 musicaFocoInput.addEventListener("change", () => {
@@ -36,19 +36,19 @@ musicaFocoInput.addEventListener("change", () => {
 });
 
 focoBt.addEventListener("click", () => {
-  temporizadorEmSegundos = 30;
+  temporizadorEmSegundos = 1500;
   alterarContexto("foco");
   focoBt.classList.add("active");
 });
 
 curtoBt.addEventListener("click", () => {
-  temporizadorEmSegundos = 15;
+  temporizadorEmSegundos = 300;
   alterarContexto("descanso-curto");
   curtoBt.classList.add("active");
 });
 
 longoBt.addEventListener("click", () => {
-  temporizadorEmSegundos = 20;
+  temporizadorEmSegundos = 900;
   alterarContexto("descanso-longo");
   longoBt.classList.add("active");
 });
