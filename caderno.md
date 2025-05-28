@@ -56,3 +56,12 @@ Absurdamente interessante quando estamos precisando de validar alguma função. 
 ## Organização em funções específicas:
 
 Sempre que uma linha de código for chamada diversas vezes para fazer algo, como no nosso caso foi a de atualizar o localStorage, é bom colocar essa linha (mesmo que seja apenas uma linha) em uma função e chamar essa função. Qual o motivo de fazer isso? Você ganhará tempo de manutenção no código e o código ficará mais limpo. Só tome o cuidado que as funções declaradas devem estar no topo do arquivo (quando não estiver modularizadas) e importadas (quando estiver modularizadas).
+
+## Adicionado dois cursos obrigatórios para aprofundar nas questões de objetos e classes
+
+<ul>
+<li>JavaScript: classes e heranças no desenvolvimento de aplicações com orientação a objetos,</li>
+<li>JavaScript: programação orientada a objetos</li>
+</ul>
+
+Link nos favoritos.

@@ -105,7 +105,12 @@ function iniciarOuPausar() {
 const contagemRegressiva = () => {
   if (temporizadorEmSegundos <= 0) {
     alert("Tempo finalizado!");
-    //to do Tocar música de finalizado
+    // broadcast de um alerta
+    const focoAtivo = html.getAttribute("data-contexto") == "foco";
+    if (focoAtivo) {
+      const evento = new CustomEvent("FocoFinalizado");
+      document.dispatchEvent(evento);
+    }
     zerar();
     somFinalizacao.play();
     return;
