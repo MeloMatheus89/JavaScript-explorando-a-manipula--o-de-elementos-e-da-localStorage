@@ -116,8 +116,9 @@ document.addEventListener("FocoFinalizado", () => {
 
 const removerTarefas = (somenteCompletas) => {
   const seletor = somenteCompletas ? ".app__section-task-list-item-complete" : ".app__section-task-list-item";
-  document.querySelectorAll(seletor).forEach((elemento) => {
-    elemento.remove; // remvoe do DOM, mas não do localStorage
+
+  document.querySelectorAll(seletor).forEach((tarefinha) => {
+    tarefinha.remove(); // remove do DOM, mas não do localStorage
   });
   listaTarefas = somenteCompletas ? listaTarefas.filter((item) => !item.completa) : [];
   atualizarTarefas(); // remove do localStorage
