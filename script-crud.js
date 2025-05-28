@@ -119,7 +119,7 @@ const removerTarefas = (somenteCompletas) => {
   document.querySelectorAll(seletor).forEach((elemento) => {
     elemento.remove; // remvoe do DOM, mas não do localStorage
   });
-  listaTarefas = someteCompletas ? listaTarefas.filter((item) => !item.completa) : [];
+  listaTarefas = somenteCompletas ? listaTarefas.filter((item) => !item.completa) : [];
   atualizarTarefas(); // remove do localStorage
 };
 
