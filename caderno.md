@@ -65,3 +65,11 @@ Sempre que uma linha de código for chamada diversas vezes para fazer algo, como
 </ul>
 
 Link nos favoritos.
+
+### Dica do Matheus
+
+Altere os valores dos mergulhos para valores baixos (perto de 30 segundos) para não esperar 30 minutos para voltar.
+Para deixar registrado:
+Foco = 1500;
+Descanso curto = 300;
+Descanso longo = 900;

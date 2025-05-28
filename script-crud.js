@@ -1,15 +1,15 @@
-// Encontrando o botão
-
 const btnAdicionarTarefa = document.querySelector(".app__button--add-task");
 const formAdicionarTarefa = document.querySelector(".app__form-add-task");
 const textArea = document.querySelector(".app__form-textarea");
 // Para ficar mais fácil, vamos usar listaTarefas para não confundir com tarefas da part do textArea.
-const listaTarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+let listaTarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 let tarefaSelecionada = null;
 let liTarefaSelecionada = null;
 
 const ulTarefas = document.querySelector(".app__section-task-list");
 const paragrafoDescricaoTarefa = document.querySelector(".app__section-active-task-description");
+
+const btnRemoverConcluidas = document.querySelector("#btn-remover-concluidas");
 
 function atualizarTarefas() {
   localStorage.setItem("tarefas", JSON.stringify(listaTarefas));
@@ -113,6 +113,17 @@ document.addEventListener("FocoFinalizado", () => {
     atualizarTarefas();
   }
 });
+
+const removerTarefas = (somenteCompletas) => {
+  const seletor = somenteCompletas ? ".app__section-task-list-item-complete" : ".app__section-task-list-item";
+  document.querySelectorAll(seletor).forEach((elemento) => {
+    elemento.remove; // remvoe do DOM, mas não do localStorage
+  });
+  listaTarefas = listaTarefas.filter((item) => !item.completa);
+  atualizarTarefas(); // remove do localStorage
+};
+
+btnRemoverConcluidas.onclick = () => removerTarefas(true);
 
 // Manter no final do arquivo o texto abaixo
 
