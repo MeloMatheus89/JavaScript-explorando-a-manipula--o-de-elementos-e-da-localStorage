@@ -10,7 +10,7 @@ const ulTarefas = document.querySelector(".app__section-task-list");
 const paragrafoDescricaoTarefa = document.querySelector(".app__section-active-task-description");
 
 const btnRemoverConcluidas = document.querySelector("#btn-remover-concluidas");
-
+const btnRemoverTodas = document.querySelector("#btn-remover-todas");
 function atualizarTarefas() {
   localStorage.setItem("tarefas", JSON.stringify(listaTarefas));
 }
@@ -119,12 +119,12 @@ const removerTarefas = (somenteCompletas) => {
   document.querySelectorAll(seletor).forEach((elemento) => {
     elemento.remove; // remvoe do DOM, mas não do localStorage
   });
-  listaTarefas = listaTarefas.filter((item) => !item.completa);
+  listaTarefas = someteCompletas ? listaTarefas.filter((item) => !item.completa) : [];
   atualizarTarefas(); // remove do localStorage
 };
 
 btnRemoverConcluidas.onclick = () => removerTarefas(true);
-
+btnRemoverTodas.onclick = () => removerTarefas(false);
 // Manter no final do arquivo o texto abaixo
 
 /*
